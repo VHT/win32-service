@@ -264,7 +264,9 @@ module Win32
       events.put_pointer(0, FFI::Pointer.new(hThread))
       events.put_pointer(FFI::Pointer.size, FFI::Pointer.new(@@hStartEvent))
 
+      sleep 1
       while (index = WaitForMultipleObjects(2, events, 0, 1000)) == WAIT_TIMEOUT
+        sleep 1
       end
 
       if index == WAIT_FAILED
