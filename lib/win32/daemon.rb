@@ -266,7 +266,6 @@ module Win32
 
       sleep 1
       while (index = WaitForMultipleObjects(2, events, 0, 1000)) == WAIT_TIMEOUT
-        sleep 1
       end
 
       if index == WAIT_FAILED
